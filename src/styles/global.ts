@@ -1,19 +1,24 @@
 import { createGlobalStyle } from 'styled-components';
-
 export default createGlobalStyle`
   * {
      margin: 0;
      padding: 0;
      box-sizing: border-box;
      outline: 0;
-     background-color: #F4F4F4;
   }
 
   html, body, input {
+    background-color: #F4F4F4;
+
     font-family: 'Nunito', sans-serif;
     font-size: 14px;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
+  }
+
+  ul, li, a{
+    list-style: none;
+    text-decoration: none;
   }
 
   button {
@@ -39,6 +44,7 @@ export default createGlobalStyle`
       color: inherit;
 
       height: 100%;
+      text-decoration: none;
 
       &:hover {
         text-decoration: inherit;

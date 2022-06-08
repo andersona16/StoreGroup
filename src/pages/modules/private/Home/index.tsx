@@ -1,10 +1,12 @@
 import { FC } from 'react';
-import { CardProdutos } from '../../../../components/modules/layouts/CardProdutos';
+import { Header } from '../../../../components/modules/layouts/Header';
+import { ProductCategories } from '../../../../components/modules/layouts/ProductCategories';
 
 const Home: FC = () => {
   return (
     <>
-      <CardProdutos />
+      <Header />
+      <ProductCategories />
     </>
   );
 };
