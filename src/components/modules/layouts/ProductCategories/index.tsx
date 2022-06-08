@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC } from "react";
 import {
   CardImagem,
   CardCategory,
@@ -6,9 +6,9 @@ import {
   Content,
   CardNameProduct,
   ValueAndBuy,
-} from './styles';
+} from "./styles";
 
-import { useApi } from '../../../../hooks/useApi';
+import { useApi } from "../../../../hooks/useApi";
 
 interface IProducts {
   title: string;
@@ -22,28 +22,32 @@ interface IProducts {
 }
 
 const ProductCategories: FC = () => {
-  const { data: products, isFetching } = useApi<IProducts[]>('/products');
+  const { data: products, isFetching } = useApi<IProducts[]>("/products");
 
   return (
     <>
-      {isFetching && <h3>Carregando dados da API...</h3>}
       <Container>
-        {products?.map(product => {
+        {isFetching && <h3>Carregando dados da API...</h3>}
+
+        {products?.map((product) => {
           return (
             <Content key={product.title}>
               <CardCategory>
-                <strong>{product.category}</strong>
-                <strong>{product.rating.rate}</strong>
+                <span>{product.category}</span>
+                <strong>⭐ {product.rating.rate}</strong>
               </CardCategory>
-              <h1>{product.title}</h1>
+
               <CardImagem>
                 <img src={product.image} alt="" />
               </CardImagem>
+              <CardNameProduct>
+                <h1>{product.title}</h1>
+              </CardNameProduct>
 
               <ValueAndBuy>
-                <span>{product.price}</span>
+                <span>💰 {product.price}</span>
 
-                <button>buy</button>
+                <button>🛒 Comprar</button>
               </ValueAndBuy>
             </Content>
           );

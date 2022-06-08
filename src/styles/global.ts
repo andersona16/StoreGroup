@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 export default createGlobalStyle`
   * {
      margin: 0;
@@ -8,7 +8,7 @@ export default createGlobalStyle`
   }
 
   html, body, input {
-    background-color: #F4F4F4;
+    background-color: #F9F9F9;
 
     font-family: 'Nunito', sans-serif;
     font-size: 14px;

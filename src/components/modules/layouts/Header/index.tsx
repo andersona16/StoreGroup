@@ -1,6 +1,6 @@
-import { FC } from 'react';
-import { Link } from 'react-router-dom';
-import { Container } from './styles';
+import { FC } from "react";
+import { Link } from "react-router-dom";
+import { Container } from "./styles";
 
 const Header: FC = () => {
   return (
@@ -15,13 +15,10 @@ const Header: FC = () => {
 
           <ul>
             <li>
-              <Link to="">Home</Link>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="">Shop</Link>
-            </li>
-            <li>
-              <Link to="/cart">Carrinho</Link>
+              <Link to="/cart">🛒</Link>
             </li>
           </ul>
         </nav>

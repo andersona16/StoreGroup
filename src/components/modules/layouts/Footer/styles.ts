@@ -8,6 +8,7 @@ export const Container = styled.footer`
   align-items: center;
   justify-content: center;
 
+  margin-top: 40px;
   > span {
     color: #7dc8ef;
     font-size: 1.3rem;
