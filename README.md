@@ -4,6 +4,10 @@
 	🚀 Desafio-Tecnico-2022 🚀  🚧 Finalizado ... 🚧
 </h4>
 
+### ✅ Demonstração da aplicação
+
+[Clique Aqui](https://store-group.vercel.app/).
+
 ## 🚀 Como executar o projeto
 
 ### Pré-requisitos
