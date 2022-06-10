@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+
 export default createGlobalStyle`
   * {
      margin: 0;
@@ -6,6 +7,7 @@ export default createGlobalStyle`
      box-sizing: border-box;
      outline: 0;
   }
+
 
   html, body, input {
     background-color: #F9F9F9;
@@ -15,6 +17,7 @@ export default createGlobalStyle`
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
   }
+
 
   ul, li, a{
     list-style: none;

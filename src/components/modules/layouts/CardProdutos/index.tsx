@@ -1,60 +1,42 @@
 import { FC } from "react";
+import { IProducts } from "../../../../types/types";
+
 import {
-  CardImagem,
   CardCategory,
   Container,
   Content,
+  CardImagem,
   CardNameProduct,
   ValueAndBuy,
 } from "./styles";
 
-import { useApi } from "../../../../hooks/useApi";
-
-interface IProducts {
-  title: string;
-  category: string;
-  price: string;
-  description: string;
-  image: string;
-  rating: {
-    rate: string;
-  };
-}
-
-const CardProdutos: FC = () => {
-  const { data: products, isFetching } = useApi<IProducts[]>("/products");
-
-  return (
-    <>
-      <Container>
-        {isFetching && <h3>Carregando dados da API...</h3>}
-
-        {products?.map((product) => {
-          return (
-            <Content key={product.title}>
-              <CardCategory>
-                <span>{product.category}</span>
-                <strong>⭐ {product.rating.rate}</strong>
-              </CardCategory>
-
-              <CardImagem>
-                <img src={product.image} alt="" />
-              </CardImagem>
-              <CardNameProduct>
-                <h1>{product.title}</h1>
-              </CardNameProduct>
-
-              <ValueAndBuy>
-                <span>💰 {product.price}</span>
-
-                <button>🛒 Comprar</button>
-              </ValueAndBuy>
-            </Content>
-          );
-        })}
-      </Container>
-    </>
-  );
+type Props = {
+  item: IProducts;
+  handleAddToCart: (clickedItem: IProducts) => void;
 };
 
-export { CardProdutos };
+const CardProdutos: FC<Props> = ({ item, handleAddToCart }) => (
+  <Container>
+    <Content>
+      <CardCategory>
+        <span>{item.category}</span>
+        <strong>⭐{item.rating.rate}</strong>
+      </CardCategory>
+      <CardImagem>
+        <img src={item.image} />
+      </CardImagem>
+
+      <CardNameProduct>
+        <h1>{item.title}</h1>
+      </CardNameProduct>
+
+      <ValueAndBuy>
+        <span>${item.price}</span>
+
+        <button onClick={() => handleAddToCart(item)}>🛒 Comprar</button>
+      </ValueAndBuy>
+    </Content>
+  </Container>
+);
+
+export default CardProdutos;

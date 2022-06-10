@@ -1,13 +1,14 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.main`
   display: grid;
   grid-template-columns: repeat(3, 0fr);
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: repeat(1, 1fr);
   grid-column-gap: 40px;
   justify-content: center;
   gap: 20px;
 
+  margin-top: 50px;
   h3 {
     text-align: center;
     height: 1000px;
@@ -84,5 +85,7 @@ export const ValueAndBuy = styled.div`
     width: 100px;
     height: 40px;
     border-radius: 100px;
+
+    cursor: pointer;
   }
 `;
